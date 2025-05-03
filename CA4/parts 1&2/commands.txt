@@ -1,0 +1,4 @@
+g++ server.cpp main_server.cpp -o server -lws2_32
+g++ client.cpp main_client.cpp -o client -lws2_32
+./server
+./client

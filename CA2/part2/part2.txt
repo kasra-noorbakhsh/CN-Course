@@ -1,0 +1,25 @@
+ip 192.168.10.1 192.168.10.254
+ip 192.168.10.2 192.168.10.254
+ip 192.168.20.1 192.168.20.254
+ip 192.168.20.2 192.168.20.254
+
+enable
+configure terminal
+
+interface fastEthernet0/0
+no shutdown
+
+interface fastEthernet0/0.10
+encapsulation dot1Q 10
+ip address 192.168.10.254 255.255.255.0
+exit
+
+interface fastEthernet0/0.20
+encapsulation dot1Q 20
+ip address 192.168.20.254 255.255.255.0
+exit
+
+ip routing
+copy running-config startup-config
+write memory
+

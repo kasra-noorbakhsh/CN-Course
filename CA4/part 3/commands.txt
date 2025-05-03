@@ -1,0 +1,6 @@
+g++ -o sender HostA.cpp -lws2_32 -lwsock32
+g++ -o router Router.cpp -lws2_32 -lwsock32
+g++ -o receiver HostB.cpp -lws2_32 -lwsock32
+./sender
+./router
+./receiver
